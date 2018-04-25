@@ -1,0 +1,49 @@
+<% provide(:title, 'SHOP') %>
+
+<h1>SHOP</h1>
+<hr>
+<p>Buy your membership here!</p>
+
+<% if @membership.length == 0 %>
+<h2>There are no memberships available at this time.</h2>
+<% end %>
+
+
+ <% @membership.each do |item| %>
+    
+             <div class="membershophols">
+        <h1><%= membership.title %></h1>
+     <%= link_to (image_tag membership.image_url, :class => "membershipIm"), membership %>
+        <%= membership.image_url %>
+       
+       <p><%= membership.description %></p>
+       <p>Price: <%= number_to_currency(membership.price, :unit =>"€") %>
+       <br>
+       Duration: <%= membership.duration %>
+       <br>
+       Description: <%= membership.description %>
+       </p>
+       
+       
+       <P>
+        
+        <% if user_signed_in? %>
+        <%= link_to 'Show', membership, :class =>"button", :role=>"button" %>
+        <% end %>
+        
+        <a href="/cart/<%= item.id %>" class="button">Add To Cart</a>
+        
+         <% if session[:login] == 1 %>
+        
+        <%= link_to 'Edit', edit_item_path(membership), :class =>"button", :role=>"button"  %>
+        <%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button", :role=>"button"  %>
+     
+        <% end %>
+     
+     
+     
+     
+     
+     </P>
+             </div>
+    <% end %>

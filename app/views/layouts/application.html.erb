@@ -9,6 +9,37 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
+    
+   
+    
+    
+    <div class="container">
+      <div id="content">
+        <p class="notice"><%= flash[:notice] %></p>
+
     <%= yield %>
+          
+    </div>
+   <div class="mainCont">
+    
+    <%= render 'layouts/cart' %>
+
+    
+    </div>
+    
+
+      </div>
+      
+     <div class="mainCont">
+    <h2>SEARCH</h2>
+    
+    <%= render 'layouts/search' %>
+
+    
+    </div>
+    </div>
+    </div>
+     <%= render 'layouts/footer' %>
   </body>
 </html>

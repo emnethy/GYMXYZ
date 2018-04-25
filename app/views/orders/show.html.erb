@@ -1,0 +1,41 @@
+<div id="itemsContainer">
+  
+  <h1>Order Details</h1>
+  
+  <table id="customers">
+    <tr>
+      <td><%= @order.order_date %></td>
+      <td><%= @order.user.id %></td>
+      <td><%= @order.status %></td>
+      
+    </tr>
+    
+    <tr>
+      <td><%= link_to 'Edit', edit_order_path(@order) %></td>
+      <td><%= link_to 'Back', orders_path %></td>
+    </tr>
+    
+  </table>
+  
+
+
+<h1>Order Items</h1>
+  <table id="customers">
+    
+    <% @orderitems.each do |orderitem| %>
+    
+       <tr>
+      <td>
+        <%= orderitem.title %>
+        
+        
+        </td>
+        <td><%= orderitem.quantity %></td>
+       </tr>
+    
+    <% end %>
+    
+ 
+  </table>
+  
+  </div>

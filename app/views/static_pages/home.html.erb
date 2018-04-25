@@ -1,7 +1,13 @@
 <% provide(:title, 'HOME') %>
 
+<div class="mainCont">
+  
+  <%= image_tag("gymXYZ.jpg", alt: "Welcome Logo", :class => "WelcomeImage") %>
+  
+  
 <h1>HOME</h1>
-
-<p>Welcome to GYMXYZ, where fitness fuels your fire. 
-</p>
 <hr>
+<p>Welcome to GYMXYZ, where fitness fuels your fire. </p>
+<%= render 'layouts/categories' %>
+<%= link_to "SIGN UP", new_user_registration_path %>
+</div>
